@@ -1,0 +1,16 @@
+<launch>
+  <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
+
+  <!-- Run a passthrough filter to clean NaNs -->
+  <node pkg="nodelet" type="nodelet" name="cropbox" args="load pcl/CropBox pcl_manager" output="screen">
+    <remap from="~input" to="/zed/point_cloud/cloud_registered" />
+    <rosparam>
+      min_x: 0
+      max_x: 5
+      min_y: -0.35
+      max_y: 0.35
+      min_z: 0
+      max_z: 0.5
+    </rosparam>
+  </node>
+</launch>
