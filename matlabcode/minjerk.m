@@ -1,0 +1,1 @@
+min_jerk(s f t);
