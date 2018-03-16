@@ -68,8 +68,8 @@ def init_values():
         if (ang != 0.0):
             dis = abs((zone/ang))
         else:
-            dis = 12.0
-        filt.append(min([12.0,dis]))
+            dis = 8.0
+        filt.append(min([8.0,dis]))
         #print dis
         
 
